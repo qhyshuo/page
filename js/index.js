@@ -28,3 +28,26 @@ for(var i=0; i<aLi.length; i++){
         aDiv[this.index].className = 'note selected';
     };
 }
+var aDis = document.getElementsByClassName('dis');
+var str = aDis[0].innerHTML;
+var aM = document.getElementById('m');
+var oRight = document.getElementsByClassName('r');
+var onOff = false;
+var str1 = str;
+if(str.length > 45){
+    var str2 = str.slice(45, str.length);
+    aDis[0].innerHTML = str.replace(str2, '......');
+}else{
+    aM.style.display = 'none';
+    oRight[0].style.display = 'none';
+}
+aM.onclick = function(){
+    onOff = !onOff;
+    if(onOff == true) {
+        aDis[0].innerHTML = str1;
+        aM.innerHTML = 'pack';
+    }else{
+        aDis[0].innerHTML = str.replace(str2, '......');
+        aM.innerHTML = 'more';
+    }
+}
