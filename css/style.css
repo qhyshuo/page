@@ -9,6 +9,9 @@ ul{
 a{
     text-decoration: none;
 }
+html{
+    position: relative;
+}
 #container{
     width: 100%;
 }
@@ -26,7 +29,7 @@ a{
     width: 864px;
     margin: 0 auto;
 }
-#adv{
+.adv{
     height: 32px;
 }
 #nav-list{
@@ -254,18 +257,17 @@ div .notes{
     float: left;
 }
 div .content{
-    height: 930px;
+    height: 1077px;
 }
 div .left-content{
     width: 467px;
-    height: 930px;
+    height: 1077px;
     float: left;
     margin-left: 30px;
 }
 div .right-content{
     width: 321px;
-    height: 930px;
-    background: deepskyblue;
+    height: 1077px;
     float: right;
     margin-right: 27px;
 }
@@ -334,6 +336,12 @@ div .chat div{
     top: 0;
     left: 0;
 }
+.speak .audio1{
+    border: 0;
+    margin-left: 5px;
+    position: absolute;
+    top: 0;
+}
 .speak span{
     font-size: 9px;
     color: #888888;
@@ -341,9 +349,15 @@ div .chat div{
     left: 0;
     bottom: 0;
 }
+.speak .audio2{
+    border: 0;
+    margin-left: 10px;
+    position: absolute;
+    top: 2px;
+}
 div .question{
     width: 100%;
-    height: 307px;
+    height: 309px;
     background: #f8f8f8;
     border: solid 1px #d7d7d7;
     margin-top: 20px;
@@ -375,6 +389,339 @@ div .question h5{
     margin-top: 11px;
     margin-left: 12px;
 }
-.answer img{
+.info img{
     border: solid 1px #d7d7d7;
+    float: left;
+}
+.info a{
+    color: #0089aa;
+    font-size: 11px;
+    float: left;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px 0 6px;
+}
+.info span{
+    color: #333333;
+    font-size: 11px;
+    float: left;
+    display: block;
+    width: 55px;
+    height: 22px;
+    line-height: 22px;
+    text-align: right;
+    border-left: solid 1px #d7d7d7;
+    position: relative;
+}
+.info span img{
+    border: none;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+.que{
+    width: 434px;
+    height: 29px;
+    border: solid 1px #8ed43e;
+    margin-top: 11px;
+    margin-left: 12px;
+    position: relative;
+}
+.que a{
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    color: #2c2c2c;
+    font-size: 13px;
+    text-indent: 12px;
+}
+.que img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 29px;
+    height: 27px;
+}
+.up{
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    left: 25px;
+    top: -5px;
+    background: url("../img/up.jpg");
+}
+.ans{
+    width: 434px;
+    height: 48px;
+    border: solid 1px #d5d5d5;
+    margin-top: 10px;
+    margin-left: 12px;
+    position: relative;
+}
+.down{
+    position: absolute;
+    left: 25px;
+    bottom: -6px;
+    width: 10px;
+    height: 6px;
+    background: url("../img/down.jpg");
+}
+.bottom{
+    width: 448px;
+    height: 49px;
+    border-bottom: dashed 1px #d2cfd2;
+    float: left;
+    margin-left: 11px;
+    margin-top: 16px;
+}
+.bottom ul{
+    list-style: square;
+}
+.bottom li{
+    width: 200px;
+    height: 23px;
+    font-size: 13px;
+    float:left;
+    margin-left: 20px;
+}
+.btn{
+    width: 50px;
+    height: 19px;
+    border: solid 1px #cccccc;
+    background: #ffffff;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    outline:medium;
+}
+.popu{
+    width: 468px;
+    height: 148px;
+    margin-top: 373px;
+    float: left;
+    position: relative;
+}
+div .popu h5{
+    margin-left: 12px;
+    margin-top: 11px;
+    float: left;
+}
+.popu-list{
+    width: 468px;
+    height: 126px;
+    margin-top: 10px;
+    float: left;
+    border-top: solid 1px #d7d7d7;
+    box-shadow: 0 2px 5px #f5f4f5;
+}
+.popu-list ul{
+    margin-top: 15px;
+    list-style: square;
+ }
+.popu-list ul li{
+    width: 208px;
+    float: left;
+    height: 28px;
+    font-size: 12px;
+    color: #353535;
+    margin-left: 26px;
+    position: relative;
+}
+.popu-list ul li img{
+    border: solid 1px #d9d9dc;
+    position: absolute;
+    top: -3px;
+    left: 107px;
+}
+.popu-list ul li a{
+    position: absolute;
+    left: 132px;
+    top: 0;
+    color: #0089aa;
+}
+#mo{
+    position: absolute;
+    right: 9px;
+    top: 14px;
+    font-size: 6px;
+}
+.ad{
+    width: 320px;
+    height: 58px;
+    margin-top: 46px;
+    border: solid 1px #d7d7d7;
+    background: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+}
+.aadd{
+    height: 13px;
+    width: 50px;
+    color: #ffffff;
+    background: #5cbb06;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    border: ridge 1px #5cbb06;
+    font-size: 12px;
+    position: absolute;
+    left: -12px;
+    top: 5px;
+}
+.proverb{
+    width: 267px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 16px;
+}
+.proverb li{
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+.pic{
+    width: 320px;
+    height: 145px;
+    border: solid 1px #d7d7d7;
+    margin-top: 10px;
+}
+.user{
+    width: 301px;
+    height: 19px;
+    margin-left: 11px;
+    margin-top: 12px;
+    font-size: 9px;
+    border-bottom: dashed 1px #d7d7d7;
+}
+.picture{
+    width: 313px;
+    height: 76px;
+    margin-left: 4px;
+    margin-top: 19px;
+}
+.picture li{
+    width: 78px;
+    height: 76px;
+    float: left;
+    text-align: center;
+}
+.picture li div{
+    width: 55px;
+    height: 55px;
+    border: solid 1px #d7d7d7;
+    margin: auto;
+}
+.picture li div img{
+    border: none;
+    margin-top: 2px;
+}
+.picture li a{
+    font-size: 9px;
+    color: #0089aa;
+    display: inline-block;
+}
+.new{
+    width: 322px;
+    height: 150px;
+    margin-top: 22px;
+}
+.con{
+    width: 100%;
+    height: 21px;
+    color: #000000;
+    font-size: 9px;
+    border-bottom: solid 1px #d7d7d7;
+    text-indent: 13px;
+    box-shadow: 0 2px 5px #f5f4f5;
+}
+.con-dic{
+    width: 322px;
+    margin-top: 18px;
+}
+.con-dic ul{
+    list-style: square;
+}
+.con-dic ul li{
+    width: 292px;
+    height: 23px;
+    float: left;
+    font-size: 13px;
+    color: #000000;
+    margin-left: 32px;
+    position: relative;
+}
+.con-dic ul li div{
+    width: 11px;
+    height: 11px;
+    background: url("../img/n.jpg");
+    position: absolute;
+    right: 17px;
+    top: 0;
+}
+.con-dic ul li div img{
+    width: 11px;
+    height: 12px;
+}
+.con-dic ul li a{
+    color: #888888;
+}
+#footer{
+    width: 100%;
+    height: 35px;
+    background: #f7f8f7;
+    border-top: solid 1px #d7d7d7;
+    position: absolute;
+    left: 0;
+    bottom: -210px;
+}
+.footer-list{
+    float: left;
+    margin-left: 145px;
+}
+.footer-list li{
+    float: left;
+    height: 100%;
+}
+
+.footer-list li a{
+    display: inline-block;
+    padding: 0 15px;
+    height: 32px;
+    line-height: 32px;
+    color: #888888;
+    font-size: 13px;
+}
+.footer-list li:before{
+    width: 1px;
+    height: 11px;
+    display: block;
+    content: '';
+    float: left;
+    background: #e9e6e9;
+    position: relative;
+    top: 11px;
+}
+.footer-list li:first-child:before{
+    display: none;
+}
+.lang{
+    float: left;
+}
+.lang a{
+    font-size: 13px;
+    color: #004fba;
+    height: 32px;
+    line-height: 32px;
+}
+.icp{
+    font-size: 13px;
+    float: right;
+    color: #888888;
+    width: 300px;
+}
+.icp a{
+    font-size: 13px;
+    color: #004fba;
+    height: 32px;
+    line-height: 32px;
 }
