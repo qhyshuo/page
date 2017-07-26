@@ -19,7 +19,7 @@ html{
     width: 1100px;
     margin: 0 auto;
 }
-#nav{
+#header{
     width: 100%;
     height: 32px;
     background-color: #80c269;
@@ -29,8 +29,8 @@ html{
     width: 864px;
     margin: 0 auto;
 }
-.adv{
-    height: 32px;
+.toggle-btn{
+  display: none;
 }
 #nav-list{
     float: left;
@@ -40,7 +40,8 @@ html{
     height: 100%;
 }
 #nav-list li:hover{
-    background: #a6d369;
+    opacity:0.6;
+    filter:alpha(opacity=40);
 }
 #nav-list li a{
     display: inline-block;
@@ -49,6 +50,12 @@ html{
     line-height: 32px;
     color: #fff;
     font-size: 13px;
+}
+#nav-list .select div{
+    width: 5px;
+    height: 3px;
+    margin: auto;
+    background: url('../img/spirit.png') -107px -9px no-repeat;
 }
 #nav-list li:before{
     width: 1px;
@@ -66,30 +73,19 @@ html{
 .select{
       background: #ffffff;
   }
-.select:before{
+#nav-list .select:before{
     width: 1px;
     height: 11px;
     display: block;
     content: '';
     float: left;
-    background: #a6d369;
+    background: #ffffff;
     position: relative;
     top: 11px;
 }
 #nav-list .select a{
     color: #000;
     height: 29px;
-}
-.select:after{
-    width: 3px;
-    height: 3px;
-    background: #74bf1f;
-    content: '';
-    margin: 0 auto;
-    display: block;
-}
-#nav-list .select:before{
-    display: none;
 }
 #nav-menus{
     float: right;
@@ -124,14 +120,14 @@ html{
     height: 230px;
     float: left;
     border-bottom: solid 1px #e9e6e9;
-    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#fff), to(#f5f4f5));/*π»∏Ë*/
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#fff), to(#f5f4f5));/*¬π√à¬∏√®*/
 }
 div .search{
     float: left;
     margin-left: 78px;
     margin-top: 30px;
     width: 368px;
-    height: 174px;
+/*    height: 174px;*/
     /*background: deepskyblue;*/
     position: relative;
 }
@@ -167,7 +163,7 @@ div .search{
 #icon1{
     width: 31px;
     height: 27px;
-    background:url("../img/search.jpg");
+    background:url("../img/spirit.png") -141px -9px no-repeat;
     position: absolute;
     right: 8px;
     top: 56px;
@@ -176,6 +172,16 @@ div .search{
 .result{
     font-size: 10px;
     margin-bottom: 12px;
+}
+.search span{
+    font-size: 14px;
+    display: block;
+}
+.search span div{
+    width: 10px;
+    height: 10px;
+    background: url('../img/spirit.png') -114px -40px no-repeat;
+    display: inline-block;
 }
 label{
     cursor: pointer;
@@ -188,7 +194,7 @@ div .notes{
     margin-right: 37px;
 }
 #tab{
-    overflow: hidden;/*Ω‚æˆÀ˙œ›Œ Ã‚*/
+    overflow: hidden;/*¬Ω√¢¬æ√∂√ã√∫√è√ù√é√ä√å√¢*/
     border: solid 1px #d7d7d7;
     border-bottom: none;
 }
@@ -198,7 +204,7 @@ div .notes{
     float: left;
     text-align: center;
     line-height: 31px;
-    cursor: pointer;/* Û±Í—˘ Ω*/
+    cursor: pointer;/*√ä√≥¬±√™√ë√π√ä¬Ω*/
     border-bottom: solid 1px #d7d7d7;
 }
 #tab li:first-child{
@@ -253,21 +259,21 @@ div .notes{
 }
 #content-b{
     width: 100%;
-    height: 930px;
     float: left;
 }
 div .content{
-    height: 1077px;
+    /*height: 1077px;*/
 }
 div .left-content{
     width: 467px;
-    height: 1077px;
+    height: 1078px;
     float: left;
     margin-left: 30px;
+    position: relative;
 }
 div .right-content{
     width: 321px;
-    height: 1077px;
+    height: 10px;
     float: right;
     margin-right: 27px;
 }
@@ -275,7 +281,6 @@ div .conversation{
     height: 213px;
     width: 100%;
     margin-top: 25px;
-    /*border: solid 1px #d7d7d7;*/
     position: relative;
 }
 #more{
@@ -305,19 +310,22 @@ div .chat{
     border: solid 1px #d7d7d7;
     border-top: none;
     width: 467px;
-    height: 160px;
+    float: left;
+}
+.chat ul{
+    margin-top: 10px;
 }
 div .chat div{
     float: left;
 }
 .chat li{
     width: 467px;
+    height: 38px;
 }
 .name{
     width: 43px;
     height: 27px;
     margin-left: 15px;
-    margin-top: 10px;
     float: left;
     font-size: 13px;
     color: #888888;
@@ -326,7 +334,6 @@ div .chat div{
     width: 400px;
     height: 27px;
     float: left;
-    margin-top: 10px;
     position: relative;
 }
 .speak a{
@@ -384,17 +391,19 @@ div .question h5{
     margin-top: 12px;
     margin-left: 6px;
 }
-.info{
+.info,.inf{
     height: 22px;
     width: 300px;
     margin-top: 11px;
     margin-left: 12px;
 }
-.info img{
-    border: solid 1px #d7d7d7;
+.info div{
+    width: 21px;
+    height: 21px;
+    background: url(../img/spirit.png) -10px -9px no-repeat;
     float: left;
 }
-.info a{
+.info a,.inf a{
     color: #0089aa;
     font-size: 11px;
     float: left;
@@ -403,7 +412,7 @@ div .question h5{
     line-height: 22px;
     padding: 0 10px 0 6px;
 }
-.info span{
+.info span,.inf span{
     color: #333333;
     font-size: 11px;
     float: left;
@@ -415,15 +424,31 @@ div .question h5{
     border-left: solid 1px #d7d7d7;
     position: relative;
 }
-.info span img{
-    border: none;
+.info span div{
+    width: 9px;
+    height: 9px;
+    background: url(../img/spirit.png) -73px -39px no-repeat;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+.inf div{
+    width: 21px;
+    height: 21px;
+    background: url(../img/spirit.png) -73px -9px no-repeat;
+    float: left;
+}
+.inf span div{
+    width: 9px;
+    height: 9px;
+    background: url(../img/spirit.png) -91px -38px no-repeat;
     position: absolute;
     top: 6px;
     left: 10px;
 }
 .que{
     width: 434px;
-    height: 29px;
+    /*height: 29px;*/
     border: solid 1px #8ed43e;
     margin-top: 11px;
     margin-left: 12px;
@@ -437,20 +462,21 @@ div .question h5{
     font-size: 13px;
     text-indent: 12px;
 }
-.que img{
+.que div{
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 29px;
-    height: 27px;
+    right: 6px;
+    top: 6px;
+    width: 16px;
+    height: 17px;
+    background: url(../img/spirit.png) -10px -38px no-repeat;
 }
-.up{
-    width: 9px;
-    height: 5px;
+.que .up{
+    width: 11px;
+    height: 6px;
     position: absolute;
     left: 25px;
-    top: -5px;
-    background: url("../img/up.jpg");
+    top: -6px;
+    background: url(../img/spirit.png) -104px -19px no-repeat;
 }
 .ans{
     width: 434px;
@@ -480,26 +506,28 @@ div .question h5{
 }
 .ans .a{
     position: absolute;
-    right: 0;
-    top: 0;
-    height: 46px;
-    width: 33px;
+    right: 10px;
+    top: 15px;
+    height: 16px;
+    width: 17px;
+    background: url(../img/spirit.png) -40px -38px no-repeat;
 }
 .ans .r{
-    width: 9px;
-    height: 6px;
+    width: 3px;
+    height: 5px;
     position: absolute;
-    right: 83px;
-    bottom: 8px;
+    right: 85px;
+    bottom: 9px;
+    background: url(../img/spirit.png) -120px -9px no-repeat;
 
 }
 .down{
     position: absolute;
     left: 25px;
     bottom: -6px;
-    width: 10px;
+    width: 11px;
     height: 6px;
-    background: url("../img/down.jpg");
+    background: url(../img/spirit.png) -120px -19px no-repeat;
 }
 .bottom{
     width: 448px;
@@ -530,10 +558,10 @@ div .question h5{
 }
 .popu{
     width: 468px;
-    height: 148px;
-    margin-top: 373px;
+    margin-bottom: 58px;
     float: left;
-    position: relative;
+    position: absolute;
+    bottom: 0;
 }
 div .popu h5{
     margin-left: 12px;
@@ -542,7 +570,6 @@ div .popu h5{
 }
 .popu-list{
     width: 468px;
-    height: 126px;
     margin-top: 10px;
     float: left;
     border-top: solid 1px #d7d7d7;
@@ -561,8 +588,10 @@ div .popu h5{
     margin-left: 26px;
     position: relative;
 }
-.popu-list ul li img{
-    border: solid 1px #d9d9dc;
+.popu-list ul li div{
+    width: 21px;
+    height: 21px;
+    background: url(../img/spirit.png) -40px -9px no-repeat;
     position: absolute;
     top: -3px;
     left: 107px;
@@ -581,7 +610,6 @@ div .popu h5{
 }
 .ad{
     width: 320px;
-    height: 58px;
     margin-top: 46px;
     border: solid 1px #d7d7d7;
     background: #f2f2f2;
@@ -603,13 +631,16 @@ div .popu h5{
 }
 .proverb{
     width: 267px;
-    height: 40px;
+    /*height: 40px;*/
     margin-left: 30px;
     margin-top: 16px;
 }
+.proverb ul{
+    margin-bottom: 12px;
+}
 .proverb li{
     font-size: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #000000;
 }
 .pic{
@@ -655,7 +686,7 @@ div .popu h5{
 }
 .new{
     width: 322px;
-    height: 150px;
+    /*height: 150px;*/
     margin-top: 22px;
 }
 .con{
@@ -686,14 +717,13 @@ div .popu h5{
 .con-dic ul li div{
     width: 11px;
     height: 11px;
-    background: url("../img/n.jpg");
+    background: url("../img/spirit.png") -138px -40px no-repeat;
     position: absolute;
     right: 17px;
     top: 0;
 }
-.con-dic ul li div img{
-    width: 11px;
-    height: 12px;
+.con-dic ul li .sele{
+    background: url("../img/spirit.png") -156px -42px no-repeat;
 }
 .con-dic ul li a{
     color: #888888;
@@ -705,7 +735,7 @@ div .popu h5{
     border-top: solid 1px #d7d7d7;
     position: absolute;
     left: 0;
-    bottom: -210px;
+    bottom: 0px;
 }
 .footer-list{
     float: left;
@@ -757,4 +787,61 @@ div .popu h5{
     color: #004fba;
     height: 32px;
     line-height: 32px;
+}
+@media screen and (max-width: 768px){
+    .wrapper{
+        width: 100%;
+    }
+    .wraper{
+        width: 100%;
+    }
+    #nav{
+        width: 100%;
+    }
+    #nav-list{
+        float: none;
+        display: none;
+    }
+    #nav-list li{
+        float: none;
+    }
+    .toggle-btn{
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      padding: 5px 7px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #nav .close{
+      display: none;
+    }
+
+    #nav:target .close{
+      display: inline-block;
+    }
+
+    #nav:target #nav-list{
+      display: block;
+      position: absolute;
+      top: 0;
+      padding-top: 32px;
+      width: 100%;
+    }
+    #nav:target ul{
+      background: #000;
+    }
+    #nav:target li, #nav:target li a{
+      display: block;
+      text-align: left;
+    }
+    #nav:target li:hover{
+      background: #3b3b3b;
+    }
+    #nav:target .select{
+      background: #272727;
+    }
+    
 }
